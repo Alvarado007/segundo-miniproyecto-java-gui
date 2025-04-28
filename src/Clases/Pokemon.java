@@ -1,5 +1,8 @@
 package Clases;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+
 import Enums.TiposPokemon;
 
 public class Pokemon {
@@ -9,6 +12,7 @@ public class Pokemon {
     private short vida;
     private byte contadorataques = 0;
     private TiposPokemon counter;
+    ImageIcon icono = new ImageIcon();
 
     
     public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter) {
