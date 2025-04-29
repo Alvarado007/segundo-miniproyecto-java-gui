@@ -36,8 +36,8 @@ public class Visualizacion {
                     int opcionEleccion = sc.nextInt();
                     sc.nextLine();
                     if (opcionEleccion == 1){
-                        entrenador1.elegirPokemonBatallaManual(sc);
-                        entrenador1.agregarAtaquePokemonManual(sc);
+                        // entrenador1.elegirPokemonBatallaManual(sc);
+                        // entrenador1.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador1.elegirPokemonBatallaAutomatico(sc);
                         entrenador1.agregraAtaquesPokemonesAutomatico(sc);
@@ -53,8 +53,8 @@ public class Visualizacion {
                     int opcionEleccion = sc.nextInt();
                     sc.nextLine();
                     if (opcionEleccion == 1){
-                        entrenador2.elegirPokemonBatallaManual(sc);
-                        entrenador2.agregarAtaquePokemonManual(sc);
+                        // entrenador2.elegirPokemonBatallaManual(sc);
+                        // entrenador2.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador2.elegirPokemonBatallaAutomatico(sc);
                         entrenador2.agregraAtaquesPokemonesAutomatico(sc);

@@ -33,6 +33,7 @@ public class Inicio extends JFrame implements ActionListener {
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pokemon Java Logo.png"))); // NOI18N
+        jLabel2.setVisible(true);
 
         jButton1.setBackground(new java.awt.Color(242, 242, 242));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +110,8 @@ public class Inicio extends JFrame implements ActionListener {
     // End of variables declaration                   
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Hola Mundo");
+        this.dispose(); // Cierra la ventana actual
+        
     }
 }
 
