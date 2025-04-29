@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 import Clases.Visualizacion;
-import Vistas.Inicio;
+import Vistas.InicioPokemon;
+import Vistas.InicioPokemon;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -9,6 +10,6 @@ public class App {
         // Visualizacion visualizacion = new Visualizacion();
         // visualizacion.iniciarJuego(sc);
         // sc.close();
-        Inicio inicio = new Inicio();
+        InicioPokemon inicio = new InicioPokemon();
     }
 }
