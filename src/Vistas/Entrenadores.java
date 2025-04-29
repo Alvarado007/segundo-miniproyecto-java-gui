@@ -8,7 +8,14 @@
  * @author Equipo Hogar
  */
 package Vistas;
-public class Entrenadores extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
+import Clases.Entrenador;
+
+public class Entrenadores extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form Entrenadores
@@ -80,6 +87,7 @@ public class Entrenadores extends javax.swing.JFrame {
         BotonContinuar.setBorderPainted(false);
         BotonContinuar.setContentAreaFilled(false);
         BotonContinuar.setPreferredSize(new java.awt.Dimension(123, 57));
+        BotonContinuar.addActionListener(this);
 
         PanelDeEntrenadores.add(BotonContinuar);
         BotonContinuar.setBounds(140, 250, 200, 57);
@@ -141,4 +149,24 @@ public class Entrenadores extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldEntrenador1;
     private javax.swing.JTextField TextFieldEntrenador2;
     // End of variables declaration                   
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == BotonContinuar) {
+            TextFieldEntrenador1.getText();
+            TextFieldEntrenador2.getText();
+            Entrenador entrenador1 = new Entrenador(TextFieldEntrenador1.getText());
+            Entrenador entrenador2 = new Entrenador(TextFieldEntrenador2.getText());
+            entrenador1.elegirPokemonBatallaAutomatico();
+            entrenador2.elegirPokemonBatallaAutomatico();
+            JOptionPane.showMessageDialog(null, entrenador1.getNombre_entrenador() + entrenador1.getEquipo_entrenador());
+            JOptionPane.showMessageDialog(null, entrenador2.getNombre_entrenador() + entrenador2.getEquipo_entrenador());
+            this.setVisible(false);
+            this.dispose();
+            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2);
+        }
+    }
+    public void intento(){
+        
+        BotonContinuar.setVisible(false);
+    }
 }

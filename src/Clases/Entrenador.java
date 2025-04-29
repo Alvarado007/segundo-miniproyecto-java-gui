@@ -79,7 +79,7 @@ public class Entrenador extends SerVivo {
     //     }
     // }
 
-    public void elegirPokemonBatallaAutomatico(Scanner sc) {
+    public void elegirPokemonBatallaAutomatico() {
         ArrayList<Pokemon> pokemones = new ArrayList<>();
             pokemones.add(new Pokemon("Pikachu", TiposPokemon.ELECTRICO, (short)100, TiposPokemon.PSIQUICO));
             pokemones.add(new Pokemon("Charmander", TiposPokemon.FUEGO,(short)120, TiposPokemon.AGUA));

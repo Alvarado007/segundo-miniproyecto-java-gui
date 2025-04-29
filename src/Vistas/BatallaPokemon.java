@@ -1,5 +1,7 @@
 package Vistas;
 
+import Clases.Entrenador;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,12 +12,16 @@ package Vistas;
  * @author santi
  */
 public class BatallaPokemon extends javax.swing.JFrame {
-
+    Entrenador entrenador1;
+    Entrenador entrenador2;
     /**
      * Creates new form BatallaPokemon
      */
-    public BatallaPokemon() {
+    public BatallaPokemon(Entrenador entrenador1, Entrenador entrenador2) {
+        this.entrenador1 = entrenador1;
+        this.entrenador2 = entrenador2;
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -89,17 +95,17 @@ public class BatallaPokemon extends javax.swing.JFrame {
         jPanel2.add(jButton8);
         jButton8.setBounds(370, 170, 75, 23);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/batalla/Pikachu Fondo Resized.jpeg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pokemones/Celebi.png"))); // NOI18N
         jPanel2.add(jLabel4);
         jLabel4.setBounds(40, 60, 100, 100);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/batalla/Pikachu Fondo Resized.jpeg"))); // NOI18N
+        // jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/batalla/Pikachu Fondo Resized.jpeg"))); // NOI18N
         jPanel2.add(jLabel3);
         jLabel3.setBounds(360, 60, 100, 100);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/batalla/Pikachu Fondo Resized.jpeg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(-3, -4, 510, 310);
+        jLabel6.setBounds(-3, -4, 510, 410);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,11 +149,6 @@ public class BatallaPokemon extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BatallaPokemon().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify                     
