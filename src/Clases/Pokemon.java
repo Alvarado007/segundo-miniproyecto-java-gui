@@ -12,7 +12,6 @@ public class Pokemon {
     private short vida;
     private byte contadorataques = 0;
     private TiposPokemon counter;
-    ImageIcon icono = new ImageIcon();
 
     
     public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter) {
@@ -64,6 +63,9 @@ public class Pokemon {
         for (Ataque ataque : ataques) {
             System.out.println(contadorataques++ + ". " + "Nombre: " + ataque.getNombreAtaque() + ", Potencia: " + ataque.getPotencia() + ", Tipo: " + ataque.getTipoAtaque() + ", Tipo de Daño: " + ataque.getTipoDano());
         }
+    }
+    public String toString() {
+        return nombre;
     }
 
     
