@@ -40,7 +40,7 @@ public class Visualizacion {
                         // entrenador1.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador1.elegirPokemonBatallaAutomatico();
-                        entrenador1.agregraAtaquesPokemonesAutomatico(sc);
+                        entrenador1.agregraAtaquesPokemonesAutomatico();
                     } else {
                         System.out.println("Opción no válida.");
                     }
@@ -57,7 +57,7 @@ public class Visualizacion {
                         // entrenador2.agregarAtaquePokemonManual(sc);
                     } else if (opcionEleccion == 2){
                         entrenador2.elegirPokemonBatallaAutomatico();
-                        entrenador2.agregraAtaquesPokemonesAutomatico(sc);
+                        entrenador2.agregraAtaquesPokemonesAutomatico();
                     } else {
                         System.out.println("Opción no válida.");
                     }

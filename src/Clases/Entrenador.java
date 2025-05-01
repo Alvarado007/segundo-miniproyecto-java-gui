@@ -1,6 +1,7 @@
 package Clases;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import Enums.TipoDano;
@@ -116,7 +117,7 @@ public class Entrenador extends SerVivo {
                 pokemones.remove(randomIndex);
             }
     }
-    public void agregraAtaquesPokemonesAutomatico(Scanner sc) {
+    public void agregraAtaquesPokemonesAutomatico() {
         ArrayList<Ataque>ataques=Ataque.getAtaques();
         for (Pokemon pokemon : equipo_entrenador) {
             for (byte i=0; i<4; i++){
@@ -192,6 +193,39 @@ public class Entrenador extends SerVivo {
             System.out.println(nombre_entrenador + " Nombre del pokémon " + contador++ + ": " + pokemon.getNombre() + ", Tipo: " + pokemon.getTipo() + ", Vida: " + pokemon.getVida());
             pokemon.mostrarAtaques();
         }
+    }
+    public HashMap<String, String> getimagenes() {
+        HashMap<String, String> imagenes = new HashMap<>();
+
+        imagenes.put("Abra", "/Imagenes/Pokemones/Abra.png");
+        imagenes.put("Alakazam", "/Imagenes/Pokemones/Alakazam.png");
+        imagenes.put("Arcanine", "/Imagenes/Pokemones/Arcanine.png");
+        imagenes.put("Blastoise", "/Imagenes/Pokemones/Blastoise.png");
+        imagenes.put("Bulbasaur", "/Imagenes/Pokemones/Bulbasaur.png");
+        imagenes.put("Celebi", "/Imagenes/Pokemones/Celebi.png");
+        imagenes.put("Charizard", "/Imagenes/Pokemones/Charizard.png");
+        imagenes.put("Charmander", "/Imagenes/Pokemones/Charmander.png");
+        imagenes.put("Delphox", "/Imagenes/Pokemones/Delphox.png");
+        imagenes.put("Eevee", "/Imagenes/Pokemones/Eevee.png");
+        imagenes.put("Gardevoir", "/Imagenes/Pokemones/Gardevoir.png");
+        imagenes.put("Gengar", "/Imagenes/Pokemones/Gengar.png");
+        imagenes.put("Greninja", "/Imagenes/Pokemones/Greninja.png");
+        imagenes.put("Gyarados", "/Imagenes/Pokemones/Gyarados.png");
+        imagenes.put("Incineroar", "/Imagenes/Pokemones/Incineroar.png");
+        imagenes.put("Jigglypuff", "/Imagenes/Pokemones/Jigglypuff.png");
+        imagenes.put("Lucario", "/Imagenes/Pokemones/Lucario.png");
+        imagenes.put("Lugia", "/Imagenes/Pokemones/Lugia.png");
+        imagenes.put("Magikarp", "/Imagenes/Pokemones/Magikarp.png");
+        imagenes.put("Meowth", "/Imagenes/Pokemones/Meowth.png");
+        imagenes.put("Mewtwo", "/Imagenes/Pokemones/Mewtwo.png");
+        imagenes.put("Pikachu", "/Imagenes/Pokemones/Pikachu.png");
+        imagenes.put("Psyduck", "/Imagenes/Pokemones/Psyduck.png");
+        imagenes.put("Raichu", "/Imagenes/Pokemones/Raichu.png");
+        imagenes.put("Rayquaza", "/Imagenes/Pokemones/Rayquaza.png");
+        imagenes.put("Snorlax", "/Imagenes/Pokemones/Snorlax.png");
+        imagenes.put("Squirtle", "/Imagenes/Pokemones/Squirtle.png");
+
+        return imagenes;
     }
 
     @Override

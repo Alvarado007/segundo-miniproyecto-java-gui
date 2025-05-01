@@ -158,6 +158,8 @@ public class Entrenadores extends javax.swing.JFrame implements ActionListener {
             Entrenador entrenador2 = new Entrenador(TextFieldEntrenador2.getText());
             entrenador1.elegirPokemonBatallaAutomatico();
             entrenador2.elegirPokemonBatallaAutomatico();
+            entrenador1.agregraAtaquesPokemonesAutomatico();
+            entrenador2.agregraAtaquesPokemonesAutomatico();
             JOptionPane.showMessageDialog(null, entrenador1.getNombre_entrenador() + entrenador1.getEquipo_entrenador());
             JOptionPane.showMessageDialog(null, entrenador2.getNombre_entrenador() + entrenador2.getEquipo_entrenador());
             this.setVisible(false);
