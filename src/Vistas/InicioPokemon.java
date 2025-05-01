@@ -38,7 +38,7 @@ public class InicioPokemon extends javax.swing.JFrame implements ActionListener{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(12, 28, 108));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(816, 639));
 
         PanelDeInicio.setLayout(null);
 
@@ -46,7 +46,7 @@ public class InicioPokemon extends javax.swing.JFrame implements ActionListener{
         LabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pokemon Java Logo.png"))); // NOI18N
         PanelDeInicio.add(LabelLogo);
-        LabelLogo.setBounds(100, 50, 280, 70);
+        LabelLogo.setBounds(100, 50, 580, 160);
 
         BotonJugar.setBackground(new java.awt.Color(242, 242, 242));
         BotonJugar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -54,15 +54,15 @@ public class InicioPokemon extends javax.swing.JFrame implements ActionListener{
         BotonJugar.setBorderPainted(false);
         BotonJugar.setContentAreaFilled(false);
         PanelDeInicio.add(BotonJugar);
-        BotonJugar.setBounds(140, 250, 200, 57);
+        BotonJugar.setBounds(180, 380, 420, 120);
         BotonJugar.addActionListener(this);
 
         LabelFondoInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         PanelDeInicio.add(LabelFondoInicio);
-        LabelFondoInicio.setBounds(0, 0, 500, 400);
+        LabelFondoInicio.setBounds(0, 0, 800, 600);
 
         getContentPane().add(PanelDeInicio);
-        PanelDeInicio.setBounds(0, 0, 500, 400);
+        PanelDeInicio.setBounds(0, 0, 800, 600);
 
         pack();
     }// </editor-fold>                        

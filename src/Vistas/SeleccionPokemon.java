@@ -55,46 +55,50 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(12, 28, 108));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(500, 400));
+        setPreferredSize(new java.awt.Dimension(816, 639));
 
         jPanel1.setLayout(null);
 
-        
+        ListEntrenador2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ListEntrenador2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ListEntrenador2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(ListEntrenador2);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(300, 190, 170, 80);
+        jScrollPane1.setBounds(510, 340, 220, 100);
 
-        
+        ListEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ListEntrenador1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(ListEntrenador1);
 
         jPanel1.add(jScrollPane3);
-        jScrollPane3.setBounds(30, 190, 170, 80);
+        jScrollPane3.setBounds(70, 340, 220, 100);
 
         LabelDeImagenEntrenador1.setBackground(new java.awt.Color(255, 255, 255));
         LabelDeImagenEntrenador1.setOpaque(true);
         jPanel1.add(LabelDeImagenEntrenador1);
-        LabelDeImagenEntrenador1.setBounds(60, 70, 110, 110);
+        LabelDeImagenEntrenador1.setBounds(80, 120, 200, 200);
 
         LabelDeImagenEntrenador2.setBackground(new java.awt.Color(255, 255, 255));
         LabelDeImagenEntrenador2.setOpaque(true);
         jPanel1.add(LabelDeImagenEntrenador2);
-        LabelDeImagenEntrenador2.setBounds(330, 70, 110, 110);
+        LabelDeImagenEntrenador2.setBounds(520, 120, 200, 200);
 
         LabelNombreEntrenador1.setBackground(new java.awt.Color(255, 255, 255));
+        LabelNombreEntrenador1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        LabelNombreEntrenador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelNombreEntrenador1.setText(entrenador1.getNombre_entrenador());
         LabelNombreEntrenador1.setOpaque(true);
         jPanel1.add(LabelNombreEntrenador1);
-        LabelNombreEntrenador1.setBounds(30, 20, 170, 40);
+        LabelNombreEntrenador1.setBounds(30, 20, 300, 80);
 
         LabelNombreEntrenador2.setBackground(new java.awt.Color(255, 255, 255));
+        LabelNombreEntrenador2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        LabelNombreEntrenador2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelNombreEntrenador2.setText(entrenador2.getNombre_entrenador());
         LabelNombreEntrenador2.setOpaque(true);
         jPanel1.add(LabelNombreEntrenador2);
-        LabelNombreEntrenador2.setBounds(300, 20, 170, 40);
+        LabelNombreEntrenador2.setBounds(470, 20, 300, 80);
 
         BotonContinuarSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Continuar Entrenadores Logo Resized.png"))); // NOI18N
         BotonContinuarSeleccionPokemon.setBorderPainted(false);
@@ -102,11 +106,11 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
         BotonContinuarSeleccionPokemon.setPreferredSize(new java.awt.Dimension(123, 57));
         BotonContinuarSeleccionPokemon.addActionListener(this);
         jPanel1.add(BotonContinuarSeleccionPokemon);
-        BotonContinuarSeleccionPokemon.setBounds(140, 300, 200, 57);
+        BotonContinuarSeleccionPokemon.setBounds(160, 480, 480, 100);
 
         LabelFondoSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         jPanel1.add(LabelFondoSeleccionPokemon);
-        LabelFondoSeleccionPokemon.setBounds(0, 0, 500, 400);
+        LabelFondoSeleccionPokemon.setBounds(0, 0, 800, 600);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
