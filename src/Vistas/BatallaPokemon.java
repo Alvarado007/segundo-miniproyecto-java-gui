@@ -1,6 +1,7 @@
 package Vistas;
 
 import Clases.Entrenador;
+import Clases.Pokemon;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,12 +15,18 @@ import Clases.Entrenador;
 public class BatallaPokemon extends javax.swing.JFrame {
     Entrenador entrenador1;
     Entrenador entrenador2;
+    Pokemon pokemon1;
+    Pokemon pokemon2;
+    byte turno;
     /**
      * Creates new form BatallaPokemon
      */
-    public BatallaPokemon(Entrenador entrenador1, Entrenador entrenador2) {
+    public BatallaPokemon(Entrenador entrenador1, Entrenador entrenador2, byte turno, Pokemon pokemon1, Pokemon pokemon2) {
+        this.turno = turno;
         this.entrenador1 = entrenador1;
         this.entrenador2 = entrenador2;
+        this.pokemon1 = pokemon1;
+        this.pokemon2 = pokemon2;
         initComponents();
         this.setVisible(true);
     }

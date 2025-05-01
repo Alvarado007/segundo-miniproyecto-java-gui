@@ -162,11 +162,7 @@ public class Entrenadores extends javax.swing.JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, entrenador2.getNombre_entrenador() + entrenador2.getEquipo_entrenador());
             this.setVisible(false);
             this.dispose();
-            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2);
+            SeleccionPokemon seleccionPokemon = new SeleccionPokemon(entrenador1, entrenador2);
         }
-    }
-    public void intento(){
-        
-        BotonContinuar.setVisible(false);
     }
 }

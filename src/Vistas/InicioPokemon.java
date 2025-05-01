@@ -113,6 +113,5 @@ public class InicioPokemon extends javax.swing.JFrame implements ActionListener{
         this.setVisible(false);
         this.dispose();
         Entrenadores entrenadores = new Entrenadores();
-        entrenadores.intento();
     }
 }

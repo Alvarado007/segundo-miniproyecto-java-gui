@@ -12,14 +12,20 @@ public class Pokemon {
     private short vida;
     private byte contadorataques = 0;
     private TiposPokemon counter;
+    short defensa;
+    short velocidad;
+    short defensaEspecial;
 
     
-    public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter) {
+    public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter, short defensa, short velocidad, short defensaEspecial) {
         this.nombre = nombre;
         this.ataques = new ArrayList<Ataque>();
         this.tipo = tipo;
         this.vida = vida;
         this.counter = counter;
+        this.defensa = defensa;
+        this.velocidad = velocidad;
+        this.defensaEspecial = defensaEspecial;
     }
     
     public String getNombre() {
@@ -54,6 +60,42 @@ public class Pokemon {
             System.out.println("No se pueden agregar más ataques.");
         }
     }
+    public void setAtaques(ArrayList<Ataque> ataques) {
+        this.ataques = ataques;
+    }
+
+    public byte getContadorataques() {
+        return contadorataques;
+    }
+
+    public void setContadorataques(byte contadorataques) {
+        this.contadorataques = contadorataques;
+    }
+
+    public short getDefensa() {
+        return defensa;
+    }
+
+    public void setDefensa(short defensa) {
+        this.defensa = defensa;
+    }
+
+    public short getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(short velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public short getDefensaEspecial() {
+        return defensaEspecial;
+    }
+
+    public void setDefensaEspecial(short defensaEspecial) {
+        this.defensaEspecial = defensaEspecial;
+    }
+
     public ArrayList<Ataque> getAtaques() {
         return ataques;
     }

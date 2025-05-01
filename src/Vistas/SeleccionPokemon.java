@@ -8,13 +8,28 @@
  * @author Equipo Hogar
  */
 package Vistas;
-public class SeleccionPokemon extends javax.swing.JFrame {
+
+import javax.swing.Action;
+
+import Clases.Entrenador;
+import Clases.Pokemon;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class SeleccionPokemon extends javax.swing.JFrame implements ActionListener {
+    Entrenador entrenador1;
+    Entrenador entrenador2; 
 
     /**
      * Creates new form SeleccionPokemon
      */
-    public SeleccionPokemon() {
+    public SeleccionPokemon(Entrenador entrenador1, Entrenador entrenador2) {
+        this.entrenador1 = entrenador1;
+        this.entrenador2 = entrenador2;
         initComponents();
+        setVisible(true);
+        this.Ganador();
     }
 
     /**
@@ -27,9 +42,9 @@ public class SeleccionPokemon extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ListEntrenador2 = new javax.swing.JList<>();
+        ListEntrenador2 = new javax.swing.JList<>(entrenador2.getEquipo_entrenador().toArray(new Pokemon[0]));
         jScrollPane3 = new javax.swing.JScrollPane();
-        ListEntrenador1 = new javax.swing.JList<>();
+        ListEntrenador1 = new javax.swing.JList<>(entrenador1.getEquipo_entrenador().toArray(new Pokemon[0]));
         LabelDeImagenEntrenador1 = new javax.swing.JLabel();
         LabelDeImagenEntrenador2 = new javax.swing.JLabel();
         LabelNombreEntrenador1 = new javax.swing.JLabel();
@@ -38,25 +53,22 @@ public class SeleccionPokemon extends javax.swing.JFrame {
         LabelFondoSeleccionPokemon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(12, 28, 108));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(500, 400));
 
         jPanel1.setLayout(null);
 
-        ListEntrenador2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Pokemon 1 E2", "Pokemon 2 E2", "Pokemon 3 E2" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
         ListEntrenador2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ListEntrenador2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(ListEntrenador2);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(300, 190, 170, 80);
 
-        ListEntrenador1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Pokemon 1 E1", "Pokemon 2 E1", "Pokemon 3 E1" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        
+        ListEntrenador1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(ListEntrenador1);
 
         jPanel1.add(jScrollPane3);
@@ -73,30 +85,26 @@ public class SeleccionPokemon extends javax.swing.JFrame {
         LabelDeImagenEntrenador2.setBounds(330, 70, 110, 110);
 
         LabelNombreEntrenador1.setBackground(new java.awt.Color(255, 255, 255));
-        LabelNombreEntrenador1.setText("Nombre Entrenador 1");
+        LabelNombreEntrenador1.setText(entrenador1.getNombre_entrenador());
         LabelNombreEntrenador1.setOpaque(true);
         jPanel1.add(LabelNombreEntrenador1);
         LabelNombreEntrenador1.setBounds(30, 20, 170, 40);
 
         LabelNombreEntrenador2.setBackground(new java.awt.Color(255, 255, 255));
-        LabelNombreEntrenador2.setText("Nombre Entrenador 2");
+        LabelNombreEntrenador2.setText(entrenador2.getNombre_entrenador());
         LabelNombreEntrenador2.setOpaque(true);
         jPanel1.add(LabelNombreEntrenador2);
         LabelNombreEntrenador2.setBounds(300, 20, 170, 40);
 
-        BotonContinuarSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Continuar Entrenadores Logo Resized.png"))); // NOI18N
+        BotonContinuarSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Continuar Entrenadores Logo Resized.png"))); // NOI18N
         BotonContinuarSeleccionPokemon.setBorderPainted(false);
         BotonContinuarSeleccionPokemon.setContentAreaFilled(false);
         BotonContinuarSeleccionPokemon.setPreferredSize(new java.awt.Dimension(123, 57));
-        BotonContinuarSeleccionPokemon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonContinuarSeleccionPokemonActionPerformed(evt);
-            }
-        });
+        BotonContinuarSeleccionPokemon.addActionListener(this);
         jPanel1.add(BotonContinuarSeleccionPokemon);
         BotonContinuarSeleccionPokemon.setBounds(140, 300, 200, 57);
 
-        LabelFondoSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pikachu Fondo Resized.jpeg"))); // NOI18N
+        LabelFondoSeleccionPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         jPanel1.add(LabelFondoSeleccionPokemon);
         LabelFondoSeleccionPokemon.setBounds(0, 0, 500, 400);
 
@@ -146,11 +154,6 @@ public class SeleccionPokemon extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SeleccionPokemon().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify                     
@@ -160,10 +163,37 @@ public class SeleccionPokemon extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFondoSeleccionPokemon;
     private javax.swing.JLabel LabelNombreEntrenador1;
     private javax.swing.JLabel LabelNombreEntrenador2;
-    private javax.swing.JList<String> ListEntrenador1;
-    private javax.swing.JList<String> ListEntrenador2;
+    private javax.swing.JList<Pokemon> ListEntrenador1;
+    private javax.swing.JList<Pokemon> ListEntrenador2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration                   
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Pokemon pokemon1 = ListEntrenador1.getSelectedValue();
+        Pokemon pokemon2 = ListEntrenador2.getSelectedValue();
+        if (pokemon1.getVelocidad() >= pokemon2.getVelocidad()) {
+            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 1, pokemon1, pokemon2);
+            this.dispose();
+            this.setVisible(false); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+        }
+        else {
+            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 2, pokemon1, pokemon2);
+            this.dispose();
+            this.setVisible(false); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+        }
+
+        
+        
+    }
+    public void Ganador(){
+        if (entrenador1.getEquipo_entrenador().isEmpty()) {
+            System.out.println("Ganador: " + entrenador2.getNombre_entrenador());
+        } else if (entrenador2.getEquipo_entrenador().isEmpty()) {
+            System.out.println("Ganador: " + entrenador1.getNombre_entrenador());
+        } else {
+            System.out.println("No hay ganador aún.");
+        }
+    }
 }
