@@ -1,6 +1,9 @@
 package Vistas;
 
+import java.util.HashMap;
+
 import Clases.Entrenador;
+import Clases.Pokemon;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,12 +17,20 @@ import Clases.Entrenador;
 public class BatallaPokemon extends javax.swing.JFrame {
     Entrenador entrenador1;
     Entrenador entrenador2;
+    HashMap<String, String> imagenes;
+    Pokemon pokemon1;
+    Pokemon pokemon2;
+    byte turno;
     /**
      * Creates new form BatallaPokemon
      */
-    public BatallaPokemon(Entrenador entrenador1, Entrenador entrenador2) {
+    public BatallaPokemon(Entrenador entrenador1, Entrenador entrenador2, byte turno, Pokemon pokemon1, Pokemon pokemon2) {
+        this.turno = turno;
         this.entrenador1 = entrenador1;
         this.entrenador2 = entrenador2;
+        this.imagenes = entrenador1.getimagenes();
+        this.pokemon1 = pokemon1;
+        this.pokemon2 = pokemon2;
         initComponents();
         this.setVisible(true);
     }
@@ -54,27 +65,27 @@ public class BatallaPokemon extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(500, 400));
         jPanel2.setLayout(null);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText(pokemon1.getNombre());
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(70, 30, 37, 16);
+        jLabel1.setBounds(70, 30, 80, 16);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText(pokemon2.getNombre());
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(390, 30, 37, 16);
+        jLabel2.setBounds(390, 30, 80, 16);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("<html>" + pokemon1.getAtaques().get(0).getNombreAtaque() + "<br>" + pokemon1.getAtaques().get(0).getPotencia() + "</html>");
         jPanel2.add(jButton1);
-        jButton1.setBounds(50, 260, 75, 23);
+        jButton1.setBounds(50, 260, 130, 70);
 
-        jButton2.setText("jButton2");
+        jButton2.setText(pokemon1.getAtaques().get(1).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(1).getPotencia());
         jPanel2.add(jButton2);
         jButton2.setBounds(50, 230, 75, 23);
 
-        jButton3.setText("jButton3");
+        jButton3.setText(pokemon1.getAtaques().get(2).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(2).getPotencia());
         jPanel2.add(jButton3);
         jButton3.setBounds(50, 200, 75, 23);
 
-        jButton4.setText("jButton4");
+        jButton4.setText(pokemon1.getAtaques().get(3).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(3).getPotencia());
         jPanel2.add(jButton4);
         jButton4.setBounds(50, 170, 75, 23);
 
@@ -94,11 +105,11 @@ public class BatallaPokemon extends javax.swing.JFrame {
         jPanel2.add(jButton8);
         jButton8.setBounds(370, 170, 75, 23);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pokemones/Celebi.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(pokemon1.getNombre())))); // NOI18N
         jPanel2.add(jLabel4);
         jLabel4.setBounds(40, 60, 100, 100);
 
-        // jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/batalla/Pikachu Fondo Resized.jpeg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(pokemon2.getNombre())))); // NOI18N
         jPanel2.add(jLabel3);
         jLabel3.setBounds(360, 60, 100, 100);
 
