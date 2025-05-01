@@ -97,6 +97,17 @@ public class Entrenador extends SerVivo {
             pokemones.add(new Pokemon("Alakazam", TiposPokemon.PSIQUICO, (short)200, TiposPokemon.FUEGO));
             pokemones.add(new Pokemon("Raichu", TiposPokemon.ELECTRICO, (short)180, TiposPokemon.PSIQUICO));
             pokemones.add(new Pokemon("Arcanine", TiposPokemon.FUEGO, (short)200, TiposPokemon.AGUA));
+            pokemones.add(new Pokemon("Abra", TiposPokemon.PSIQUICO, (short)200, TiposPokemon.FUEGO));
+            pokemones.add(new Pokemon("Celebi", TiposPokemon.PSIQUICO, (short)200, TiposPokemon.FUEGO));
+            pokemones.add(new Pokemon("Delphox", TiposPokemon.FUEGO, (short)200, TiposPokemon.AGUA));
+            pokemones.add(new Pokemon("Lugia", TiposPokemon.AGUA, (short)200, TiposPokemon.ELECTRICO));
+            pokemones.add(new Pokemon("Rayquaza", TiposPokemon.ELECTRICO, (short)200, TiposPokemon.PSIQUICO));
+            pokemones.add(new Pokemon("Gardevoir", TiposPokemon.PSIQUICO, (short)200, TiposPokemon.FUEGO));
+            pokemones.add(new Pokemon("Gyarados", TiposPokemon.AGUA, (short)200, TiposPokemon.ELECTRICO));
+            pokemones.add(new Pokemon("Lucario", TiposPokemon.ELECTRICO, (short)200, TiposPokemon.PSIQUICO));
+            pokemones.add(new Pokemon("Greninja", TiposPokemon.AGUA, (short)200, TiposPokemon.ELECTRICO));
+            pokemones.add(new Pokemon("Incineroar", TiposPokemon.FUEGO, (short)200, TiposPokemon.AGUA));
+            pokemones.add(new Pokemon("Magikarp", TiposPokemon.AGUA, (short)80, TiposPokemon.ELECTRICO));
             for (byte i=0; i<3; i++){
                 int randomIndex = (int) (Math.random() * pokemones.size());
                 Pokemon pokemon = pokemones.get(randomIndex);
