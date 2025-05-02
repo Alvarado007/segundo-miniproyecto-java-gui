@@ -78,11 +78,13 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
         jPanel1.add(jScrollPane3);
         jScrollPane3.setBounds(70, 340, 220, 100);
 
+        LabelDeImagenEntrenador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Ash.jpeg"))); // NOI18N
         LabelDeImagenEntrenador1.setBackground(new java.awt.Color(255, 255, 255));
         LabelDeImagenEntrenador1.setOpaque(true);
         jPanel1.add(LabelDeImagenEntrenador1);
         LabelDeImagenEntrenador1.setBounds(80, 120, 200, 200);
 
+        LabelDeImagenEntrenador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Giovanni.jpeg"))); // NOI18N
         LabelDeImagenEntrenador2.setBackground(new java.awt.Color(255, 255, 255));
         LabelDeImagenEntrenador2.setOpaque(true);
         jPanel1.add(LabelDeImagenEntrenador2);
