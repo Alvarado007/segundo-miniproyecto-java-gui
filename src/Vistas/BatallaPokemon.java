@@ -1,7 +1,10 @@
 package Vistas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
+import Clases.Ataque;
 import Clases.Entrenador;
 import Clases.Pokemon;
 
@@ -14,7 +17,7 @@ import Clases.Pokemon;
  *
  * @author santi
  */
-public class BatallaPokemon extends javax.swing.JFrame {
+public class BatallaPokemon extends javax.swing.JFrame implements ActionListener {
     Entrenador entrenador1;
     Entrenador entrenador2;
     HashMap<String, String> imagenes;
@@ -79,37 +82,53 @@ public class BatallaPokemon extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(570, 90, 120, 30);
 
-        jButton1.setText("<html>" + pokemon1.getAtaques().get(0).getNombreAtaque() + "<br>" + pokemon1.getAtaques().get(0).getPotencia() + "</html>");
+        jButton1.setText("<html>" + pokemon1.getAtaques().get(0).getNombreAtaque() + "<br>" + "daño:" +pokemon1.getAtaques().get(0).getPotencia() + "</html>");
         jPanel2.add(jButton1);
         jButton1.setBounds(30, 410, 130, 70);
+        jButton1.addActionListener(this);
+        jButton1.setActionCommand("0");
 
-        jButton2.setText(pokemon1.getAtaques().get(1).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(1).getPotencia());
+        jButton2.setText("<html>" + pokemon1.getAtaques().get(1).getNombreAtaque() + "<br>" +"daño:" + pokemon1.getAtaques().get(1).getPotencia() + "</html>");
         jPanel2.add(jButton2);
         jButton2.setBounds(30, 500, 130, 70);
+        jButton2.addActionListener(this);
+        jButton2.setActionCommand("1");
 
-        jButton3.setText(pokemon1.getAtaques().get(2).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(2).getPotencia());
+        jButton3.setText("<html>" + pokemon1.getAtaques().get(2).getNombreAtaque() + "<br>" +"daño:" + pokemon1.getAtaques().get(2).getPotencia() + "</html>");
         jPanel2.add(jButton3);
         jButton3.setBounds(180, 410, 130, 70);
+        jButton3.addActionListener(this);
+        jButton3.setActionCommand("2");
 
-        jButton4.setText(pokemon1.getAtaques().get(3).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(3).getPotencia());
+        jButton4.setText("<html>" + pokemon1.getAtaques().get(3).getNombreAtaque() + "<br>" +"daño:" + pokemon1.getAtaques().get(3).getPotencia() + "</html>");
         jPanel2.add(jButton4);
         jButton4.setBounds(180, 500, 130, 70);
+        jButton4.addActionListener(this);
+        jButton4.setActionCommand("3");
 
-        jButton5.setText("jButton5");
+        jButton5.setText("<html>" + pokemon2.getAtaques().get(0).getNombreAtaque() + "<br>" +"daño:" + pokemon2.getAtaques().get(0).getPotencia() + "</html>");
         jPanel2.add(jButton5);
         jButton5.setBounds(490, 410, 130, 70);
+        jButton5.addActionListener(this);
+        jButton5.setActionCommand("0");
 
-        jButton6.setText("jButton6");
+        jButton6.setText("<html>" + pokemon2.getAtaques().get(1).getNombreAtaque() + "<br>" +"daño:" + pokemon2.getAtaques().get(1).getPotencia() + "</html>");
         jPanel2.add(jButton6);
         jButton6.setBounds(490, 500, 130, 70);
+        jButton6.addActionListener(this);
+        jButton6.setActionCommand("1");
 
-        jButton7.setText("jButton7");
+        jButton7.setText("<html>" + pokemon2.getAtaques().get(2).getNombreAtaque() + "<br>" +"daño:" + pokemon2.getAtaques().get(2).getPotencia() + "</html>");
         jPanel2.add(jButton7);
         jButton7.setBounds(640, 410, 130, 70);
+        jButton7.addActionListener(this);
+        jButton7.setActionCommand("2");
 
-        jButton8.setText("jButton8");
+        jButton8.setText("<html>" + pokemon2.getAtaques().get(3).getNombreAtaque() + "<br>" +"daño:" + pokemon2.getAtaques().get(3).getPotencia() + "</html>");
         jPanel2.add(jButton8);
         jButton8.setBounds(640, 500, 130, 70);
+        jButton8.addActionListener(this);
+        jButton8.setActionCommand("3");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(pokemon1.getNombre())))); // NOI18N
         jPanel2.add(jLabel4);
@@ -117,13 +136,13 @@ public class BatallaPokemon extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("jLabel7");
+        jLabel7.setText(Short.toString(pokemon2.getVida()));
         jPanel2.add(jLabel7);
         jLabel7.setBounds(570, 130, 120, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("jLabel5");
+        jLabel5.setText(Short.toString(pokemon1.getVida()));
         jPanel2.add(jLabel5);
         jLabel5.setBounds(100, 130, 120, 30);
 
@@ -196,5 +215,82 @@ public class BatallaPokemon extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
-    // End of variables declaration                   
+    // End of variables declaration      
+    
+    public void Ocultarbotones() {
+        if (turno == 1) {
+            jButton1.setEnabled(true);
+            jButton2.setEnabled(true);
+            jButton3.setEnabled(true);
+            jButton4.setEnabled(true);
+            jButton5.setEnabled(false);
+            jButton6.setEnabled(false); 
+            jButton7.setEnabled(false);
+            jButton8.setEnabled(false);
+            mensajes("Es el turno de " + entrenador1.getNombre_entrenador() + " para atacar con " + pokemon1.getNombre() + "!");   
+        } else {
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
+            jButton5.setEnabled(true);
+            jButton6.setEnabled(true);
+            jButton7.setEnabled(true);
+            jButton8.setEnabled(true);
+            mensajes("Es el turno de " + entrenador2.getNombre_entrenador() + " para atacar con " + pokemon2.getNombre() + "!");
+        }
+    }
+    public void mensajes(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Batalla Pokemon", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+            if (e.getSource()==jButton1  || e.getSource()==jButton2 || e.getSource()==jButton3 || e.getSource()==jButton4){
+                int ataque = Integer.parseInt(e.getActionCommand());
+                Ataque ataque1 = pokemon1.getAtaques().get(ataque);
+                int daño = (ataque1.getPotencia()* ataque1.getPotencia())/ pokemon2.getDefensa();
+                pokemon2.setVida((short) (pokemon2.getVida() - daño));
+                mensajes(entrenador1.getNombre_entrenador() + " ataca a " + pokemon2.getNombre() + " con " + ataque1.getNombreAtaque() + " y le hace " + daño + " de daño!");
+                jLabel7.setText(Short.toString(pokemon2.getVida()));
+                turno = (byte)(2);
+                DecisionBatalla();
+                
+                
+            }
+            else if (e.getSource()==jButton5  || e.getSource()==jButton6 || e.getSource()==jButton7 || e.getSource()==jButton8){
+                int ataque = Integer.parseInt(e.getActionCommand());
+                Ataque ataque2 = pokemon2.getAtaques().get(ataque);
+                int daño = (ataque2.getPotencia()* ataque2.getPotencia())/ pokemon1.getDefensa();
+                pokemon1.setVida((short) (pokemon1.getVida() - daño));
+                mensajes(entrenador2.getNombre_entrenador() + " ataca a " + pokemon1.getNombre() + " con " + ataque2.getNombreAtaque() + " y le hace " + daño + " de daño!");
+                jLabel5.setText(Short.toString(pokemon1.getVida()));
+                turno = (byte)(1);
+                DecisionBatalla();
+                
+            }
+        
+    }
+    public void DecisionBatalla(){
+        if (pokemon1.getVida() <=0 || pokemon2.getVida() <=0){
+            if (pokemon1.getVida() <=0){
+                entrenador1.EliminarPokemon(pokemon1);
+                mensajes("Ganador: " + entrenador2.getNombre_entrenador() + " con " + pokemon2.getNombre());
+                SeleccionPokemon seleccionPokemon = new SeleccionPokemon(entrenador1, entrenador2);
+                seleccionPokemon.EleccionesPokemon(entrenador1, entrenador2, pokemon2,2);
+                this.setVisible(false);
+                this.dispose();
+            }else if (pokemon2.getVida() <=0){
+                entrenador2.EliminarPokemon(pokemon2);
+                mensajes("Ganador: " + entrenador1.getNombre_entrenador() + " con " + pokemon1.getNombre());
+                SeleccionPokemon seleccionPokemon = new SeleccionPokemon(entrenador1, entrenador2);
+                seleccionPokemon.EleccionesPokemon(entrenador1, entrenador2, pokemon1,1);
+                this.setVisible(false);
+                this.dispose();
+            }
+        }
+        else{
+            Ocultarbotones();
+        }
+    }
 }

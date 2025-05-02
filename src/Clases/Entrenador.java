@@ -21,6 +21,10 @@ public class Entrenador extends SerVivo {
     public ArrayList<Pokemon> getEquipo_entrenador() {
         return equipo_entrenador;
     }
+    public void EliminarPokemon(Pokemon pokemon) {
+        equipo_entrenador.remove(pokemon);
+    }
+
 
     public Entrenador(String nombre_entrenador) {
         this.nombre_entrenador = nombre_entrenador;

@@ -10,16 +10,20 @@
 package Vistas;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 import Clases.Entrenador;
 import Clases.Pokemon;
 
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SeleccionPokemon extends javax.swing.JFrame implements ActionListener {
     Entrenador entrenador1;
     Entrenador entrenador2; 
+    Pokemon PokemonGuardado;
+    int ContadorEntrenadorTotal;
 
     /**
      * Creates new form SeleccionPokemon
@@ -124,11 +128,7 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
         );
 
         pack();
-    }// </editor-fold>                        
-
-    private void BotonContinuarSeleccionPokemonActionPerformed(java.awt.event.ActionEvent evt) {                                                               
-        // TODO add your handling code here:
-    }                                                              
+    }// </editor-fold>                                                                               
 
     /**
      * @param args the command line arguments
@@ -175,17 +175,51 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
     // End of variables declaration                   
     @Override
     public void actionPerformed(ActionEvent e) {
-        Pokemon pokemon1 = ListEntrenador1.getSelectedValue();
-        Pokemon pokemon2 = ListEntrenador2.getSelectedValue();
-        if (pokemon1.getVelocidad() >= pokemon2.getVelocidad()) {
-            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 1, pokemon1, pokemon2);
-            this.dispose();
-            this.setVisible(false); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
-        }
-        else {
-            BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 2, pokemon1, pokemon2);
-            this.dispose();
-            this.setVisible(false); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+        if (PokemonGuardado == null) {   
+            Pokemon pokemon1 = ListEntrenador1.getSelectedValue();
+            Pokemon pokemon2 = ListEntrenador2.getSelectedValue();
+            if (pokemon1.getVelocidad() >= pokemon2.getVelocidad()) {
+                BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 1, pokemon1, pokemon2);
+                this.dispose();
+                this.setVisible(false);
+                batalla.Ocultarbotones(); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+            }
+            else {
+                BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 2, pokemon1, pokemon2);
+                this.dispose();
+                this.setVisible(false);
+                batalla.Ocultarbotones(); //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+            }
+        } else {
+            if (ContadorEntrenadorTotal == 1) {
+                Pokemon pokemonEleccion = ListEntrenador2.getSelectedValue();
+                if (pokemonEleccion.getVelocidad() >= PokemonGuardado.getVelocidad()) {
+                    BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 2, PokemonGuardado, pokemonEleccion);
+                    this.dispose();
+                    this.setVisible(false);
+                    batalla.Ocultarbotones(); 
+                }
+                else{
+                    BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 1, PokemonGuardado, pokemonEleccion);
+                    this.dispose();
+                    this.setVisible(false);
+                    batalla.Ocultarbotones();
+                }//new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+            } else if (ContadorEntrenadorTotal == 2) {
+                Pokemon pokemonEleccion = ListEntrenador1.getSelectedValue();
+                if (pokemonEleccion.getVelocidad() >= PokemonGuardado.getVelocidad()) {
+                    BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 1, pokemonEleccion, PokemonGuardado);
+                    this.dispose();
+                    this.setVisible(false);
+                    batalla.Ocultarbotones();
+                }
+                else{
+                    BatallaPokemon batalla = new BatallaPokemon(entrenador1, entrenador2,(byte) 2, pokemonEleccion, PokemonGuardado);
+                    this.dispose();
+                    this.setVisible(false);
+                    batalla.Ocultarbotones();
+                } //new BatallaPokemon(entrenador1, entrenador2,(byte) ,pokemon1, pokemon2);
+            }
         }
 
         
@@ -193,11 +227,25 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
     }
     public void Ganador(){
         if (entrenador1.getEquipo_entrenador().isEmpty()) {
-            System.out.println("Ganador: " + entrenador2.getNombre_entrenador());
+            JOptionPane.showMessageDialog(null, "Ganador: " + entrenador2.getNombre_entrenador());
+            System.exit(0);
         } else if (entrenador2.getEquipo_entrenador().isEmpty()) {
-            System.out.println("Ganador: " + entrenador1.getNombre_entrenador());
+            JOptionPane.showMessageDialog(null, "Ganador: " + entrenador1.getNombre_entrenador());
+            System.exit(0);
         } else {
             System.out.println("No hay ganador aún.");
+        }
+    }
+    public void EleccionesPokemon(Entrenador entrenador1,  Entrenador entrenador2, Pokemon pokemonVivo,int ContadorEntrenador){
+        if  (ContadorEntrenador == 1) {
+            ListEntrenador1.setEnabled(false);
+            PokemonGuardado = pokemonVivo;
+            ContadorEntrenadorTotal = ContadorEntrenador;
+        }
+        else if (ContadorEntrenador == 2) {
+            ListEntrenador2.setEnabled(false);
+            PokemonGuardado = pokemonVivo;
+            ContadorEntrenadorTotal = ContadorEntrenador;
         }
     }
 }
