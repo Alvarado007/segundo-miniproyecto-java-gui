@@ -55,67 +55,85 @@ public class BatallaPokemon extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
+        setPreferredSize(new java.awt.Dimension(816, 639));
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(500, 400));
+        jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanel2.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(pokemon1.getNombre());
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(70, 30, 80, 16);
+        jLabel1.setBounds(100, 90, 120, 30);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText(pokemon2.getNombre());
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(390, 30, 80, 16);
+        jLabel2.setBounds(570, 90, 120, 30);
 
         jButton1.setText("<html>" + pokemon1.getAtaques().get(0).getNombreAtaque() + "<br>" + pokemon1.getAtaques().get(0).getPotencia() + "</html>");
         jPanel2.add(jButton1);
-        jButton1.setBounds(50, 260, 130, 70);
+        jButton1.setBounds(30, 410, 130, 70);
 
         jButton2.setText(pokemon1.getAtaques().get(1).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(1).getPotencia());
         jPanel2.add(jButton2);
-        jButton2.setBounds(50, 230, 75, 23);
+        jButton2.setBounds(30, 500, 130, 70);
 
         jButton3.setText(pokemon1.getAtaques().get(2).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(2).getPotencia());
         jPanel2.add(jButton3);
-        jButton3.setBounds(50, 200, 75, 23);
+        jButton3.setBounds(180, 410, 130, 70);
 
         jButton4.setText(pokemon1.getAtaques().get(3).getNombreAtaque() + "\n" + pokemon1.getAtaques().get(3).getPotencia());
         jPanel2.add(jButton4);
-        jButton4.setBounds(50, 170, 75, 23);
+        jButton4.setBounds(180, 500, 130, 70);
 
         jButton5.setText("jButton5");
         jPanel2.add(jButton5);
-        jButton5.setBounds(372, 260, 75, 23);
+        jButton5.setBounds(490, 410, 130, 70);
 
         jButton6.setText("jButton6");
         jPanel2.add(jButton6);
-        jButton6.setBounds(372, 231, 75, 23);
+        jButton6.setBounds(490, 500, 130, 70);
 
         jButton7.setText("jButton7");
         jPanel2.add(jButton7);
-        jButton7.setBounds(370, 200, 75, 23);
+        jButton7.setBounds(640, 410, 130, 70);
 
         jButton8.setText("jButton8");
         jPanel2.add(jButton8);
-        jButton8.setBounds(370, 170, 75, 23);
+        jButton8.setBounds(640, 500, 130, 70);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(pokemon1.getNombre())))); // NOI18N
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(40, 60, 100, 100);
+        jLabel4.setBounds(60,180,200,200);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("jLabel7");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(570, 130, 120, 30);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(100, 130, 120, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(pokemon2.getNombre())))); // NOI18N
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(360, 60, 100, 100);
+        jLabel3.setBounds(530, 180, 200, 200);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(-3, -4, 510, 410);
+        jLabel6.setBounds(0, 0, 800, 600);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,7 +192,9 @@ public class BatallaPokemon extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration                   
 }

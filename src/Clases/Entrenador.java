@@ -11,6 +11,7 @@ public class Entrenador extends SerVivo {
     private String nombre_entrenador;
     private ArrayList<Pokemon> equipo_entrenador;
     private byte contador_pokemones = 0;
+    //si
 
 
     public String getNombre_entrenador() {

@@ -45,43 +45,43 @@ public class Entrenadores extends javax.swing.JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(12, 28, 108));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(500, 400));
+        setPreferredSize(new java.awt.Dimension(816, 639));
 
         PanelDeEntrenadores.setBackground(new java.awt.Color(153, 204, 255));
-        PanelDeEntrenadores.setPreferredSize(new java.awt.Dimension(500, 400));
+        PanelDeEntrenadores.setPreferredSize(new java.awt.Dimension(800, 600));
         PanelDeEntrenadores.setLayout(null);
 
         LabelEntrenadores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelEntrenadores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelEntrenadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Entrenadores Resized.png"))); // NOI18N
         PanelDeEntrenadores.add(LabelEntrenadores);
-        LabelEntrenadores.setBounds(70, 30, 340, 70);
+        LabelEntrenadores.setBounds(100, 20, 580, 160);
 
         LabelEntrenador2.setBackground(new java.awt.Color(255, 255, 255));
-        LabelEntrenador2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelEntrenador2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelEntrenador2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelEntrenador2.setText("Ingrese el nombre del entrenador 2");
         LabelEntrenador2.setOpaque(true);
         PanelDeEntrenadores.add(LabelEntrenador2);
-        LabelEntrenador2.setBounds(20, 190, 250, 50);
+        LabelEntrenador2.setBounds(20, 340, 360, 130);
 
         TextFieldEntrenador2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         PanelDeEntrenadores.add(TextFieldEntrenador2);
-        TextFieldEntrenador2.setBounds(280, 190, 180, 50);
+        TextFieldEntrenador2.setBounds(420, 340, 360, 130);
 
         LabelEntrenador1.setBackground(new java.awt.Color(255, 255, 255));
-        LabelEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LabelEntrenador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelEntrenador1.setText("Ingrese el nombre del entrenador 1");
         LabelEntrenador1.setOpaque(true);
         PanelDeEntrenadores.add(LabelEntrenador1);
-        LabelEntrenador1.setBounds(20, 120, 250, 50);
+        LabelEntrenador1.setBounds(20, 190, 360, 130);
 
         TextFieldEntrenador1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         PanelDeEntrenadores.add(TextFieldEntrenador1);
-        TextFieldEntrenador1.setBounds(280, 120, 180, 50);
+        TextFieldEntrenador1.setBounds(420, 190, 360, 130);
 
         BotonContinuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Continuar Entrenadores Logo Resized.png"))); // NOI18N
         BotonContinuar.setBorderPainted(false);
@@ -90,14 +90,14 @@ public class Entrenadores extends javax.swing.JFrame implements ActionListener {
         BotonContinuar.addActionListener(this);
 
         PanelDeEntrenadores.add(BotonContinuar);
-        BotonContinuar.setBounds(140, 250, 200, 57);
+        BotonContinuar.setBounds(160, 480, 480, 100);
 
         LabelFondoEntrenadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logos/Pikachu Fondo Resized.jpeg"))); // NOI18N
         PanelDeEntrenadores.add(LabelFondoEntrenadores);
-        LabelFondoEntrenadores.setBounds(0, 0, 500, 400);
+        LabelFondoEntrenadores.setBounds(0, 0, 800, 600);
 
         getContentPane().add(PanelDeEntrenadores);
-        PanelDeEntrenadores.setBounds(0, 0, 500, 400);
+        PanelDeEntrenadores.setBounds(0, 0, 800, 600);
 
         pack();
     }// </editor-fold>                        
