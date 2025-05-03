@@ -49,42 +49,47 @@ public class Ataque {
         this.tipoAtaque = tipoAtaque;
     }
 
+    static public short randomPotencia() {
+        return (short) (Math.random() * 80 + 20);
+    }
+
     static public ArrayList<Ataque> getAtaques() {
         ArrayList<Ataque> ataques = new ArrayList<Ataque>();
-        Ataque ataque1 = new Ataque("Rayo", TipoDano.Fisico, (short) 50, TiposPokemon.ELECTRICO);
-        Ataque ataque2 = new Ataque("Llamarada", TipoDano.Fisico, (short) 60, TiposPokemon.FUEGO);
-        Ataque ataque3 = new Ataque("Burbuja", TipoDano.Fisico, (short) 40, TiposPokemon.AGUA);
-        Ataque ataque4 = new Ataque("Confusion", TipoDano.Fisico, (short) 55, TiposPokemon.PSIQUICO);
-        Ataque ataque5 = new Ataque("Chispa", TipoDano.Fisico, (short) 40, TiposPokemon.ELECTRICO);
-        Ataque ataque6 = new Ataque("Electrocañón", TipoDano.Fisico, (short) 85, TiposPokemon.ELECTRICO);
-        Ataque ataque7 = new Ataque("Descarga", TipoDano.Fisico, (short) 70, TiposPokemon.ELECTRICO);
-        Ataque ataque8 = new Ataque("Rayo Voltio", TipoDano.Fisico, (short) 65, TiposPokemon.ELECTRICO);
-        Ataque ataque9 = new Ataque("Carga Salvaje", TipoDano.Fisico, (short) 90, TiposPokemon.ELECTRICO);
-        Ataque ataque10 = new Ataque("Chispa Rápida", TipoDano.Fisico, (short) 30, TiposPokemon.ELECTRICO);
-        Ataque ataque11 = new Ataque("Lanzallamas", TipoDano.Fisico, (short) 80, TiposPokemon.FUEGO);
-        Ataque ataque12 = new Ataque("Giro Fuego", TipoDano.Fisico, (short) 35, TiposPokemon.FUEGO);
-        Ataque ataque13 = new Ataque("Fuego Fatuo", TipoDano.Fisico, (short) 40, TiposPokemon.FUEGO);
-        Ataque ataque14 = new Ataque("Rueda Fuego", TipoDano.Fisico, (short) 60, TiposPokemon.FUEGO);
-        Ataque ataque15 = new Ataque("Colmillo Ígneo", TipoDano.Fisico, (short) 65, TiposPokemon.FUEGO);
-        Ataque ataque16 = new Ataque("Llama Ardiente", TipoDano.Fisico, (short) 70, TiposPokemon.FUEGO);
-        Ataque ataque17 = new Ataque("Pistola Agua", TipoDano.Fisico, (short) 40, TiposPokemon.AGUA);
-        Ataque ataque18 = new Ataque("Hidropulso", TipoDano.Fisico, (short) 60, TiposPokemon.AGUA);
-        Ataque ataque19 = new Ataque("Surf", TipoDano.Fisico, (short) 80, TiposPokemon.AGUA);
-        Ataque ataque20 = new Ataque("Aqua Cola", TipoDano.Fisico, (short) 75, TiposPokemon.AGUA);
-        Ataque ataque21 = new Ataque("Torrente", TipoDano.Fisico, (short) 90, TiposPokemon.AGUA);
-        Ataque ataque22 = new Ataque("Aqua Impacto", TipoDano.Fisico, (short) 65, TiposPokemon.AGUA);
-        Ataque ataque23 = new Ataque("Psicocorte", TipoDano.Fisico, (short) 70, TiposPokemon.PSIQUICO);
-        Ataque ataque24 = new Ataque("Onda Mental", TipoDano.Fisico, (short) 60, TiposPokemon.PSIQUICO);
-        Ataque ataque25 = new Ataque("Psico Golpe", TipoDano.Fisico, (short) 75, TiposPokemon.PSIQUICO);
-        Ataque ataque26 = new Ataque("Confusión", TipoDano.Fisico, (short) 50, TiposPokemon.PSIQUICO);
-        Ataque ataque27 = new Ataque("Cabeza Zen", TipoDano.Fisico, (short) 65, TiposPokemon.PSIQUICO);
-        Ataque ataque28 = new Ataque("Corte Mental", TipoDano.Fisico, (short) 80, TiposPokemon.PSIQUICO);
-        Ataque ataque29 = new Ataque("Trueno Cortante", TipoDano.Fisico, (short) 85, TiposPokemon.ELECTRICO);
-        Ataque ataque30 = new Ataque("Explosión Ígnea", TipoDano.Fisico, (short) 95, TiposPokemon.FUEGO);
-        Ataque ataque31 = new Ataque("Ráfaga Psíquica", TipoDano.Fisico, (short) 90, TiposPokemon.PSIQUICO);
-        Ataque ataque32 = new Ataque("Tsunami", TipoDano.Fisico, (short) 100, TiposPokemon.AGUA);
-        Ataque ataque33 = new Ataque("Tormenta Eléctrica", TipoDano.Fisico, (short) 95, TiposPokemon.ELECTRICO);
-        Ataque ataque34 = new Ataque("Explosión de Vapor", TipoDano.Fisico, (short) 85, TiposPokemon.AGUA);
+        Ataque ataque1 = new Ataque("Rayo", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque2 = new Ataque("Llamarada", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque3 = new Ataque("Burbuja", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque4 = new Ataque("Confusion", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque5 = new Ataque("Chispa", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque6 = new Ataque("Electrocañón", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque7 = new Ataque("Descarga", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque8 = new Ataque("Rayo Voltio", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque9 = new Ataque("Carga Salvaje", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque10 = new Ataque("Chispa Rápida", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque11 = new Ataque("Lanzallamas", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque12 = new Ataque("Giro Fuego", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque13 = new Ataque("Fuego Fatuo", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque14 = new Ataque("Rueda Fuego", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque15 = new Ataque("Colmillo Ígneo", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque16 = new Ataque("Llama Ardiente", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque17 = new Ataque("Pistola Agua", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque18 = new Ataque("Hidropulso", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque19 = new Ataque("Surf", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque20 = new Ataque("Aqua Cola", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque21 = new Ataque("Torrente", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque22 = new Ataque("Aqua Impacto", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque23 = new Ataque("Psicocorte", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque24 = new Ataque("Onda Mental", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque25 = new Ataque("Psico Golpe", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque26 = new Ataque("Confusión", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque27 = new Ataque("Cabeza Zen", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque28 = new Ataque("Corte Mental", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque29 = new Ataque("Trueno Cortante", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque30 = new Ataque("Explosión Ígnea", TipoDano.Fisico, randomPotencia(), TiposPokemon.FUEGO);
+        Ataque ataque31 = new Ataque("Ráfaga Psíquica", TipoDano.Fisico, randomPotencia(), TiposPokemon.PSIQUICO);
+        Ataque ataque32 = new Ataque("Tsunami", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+        Ataque ataque33 = new Ataque("Tormenta Eléctrica", TipoDano.Fisico, randomPotencia(), TiposPokemon.ELECTRICO);
+        Ataque ataque34 = new Ataque("Explosión de Vapor", TipoDano.Fisico, randomPotencia(), TiposPokemon.AGUA);
+
 
         ataques.add(ataque1);
         ataques.add(ataque2);
