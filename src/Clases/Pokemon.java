@@ -15,9 +15,10 @@ public class Pokemon {
     short defensa;
     short velocidad;
     short defensaEspecial;
+    short ataque;
 
     
-    public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter, short defensa, short velocidad, short defensaEspecial) {
+    public Pokemon(String nombre, TiposPokemon tipo, short vida, TiposPokemon counter, short defensa, short velocidad, short defensaEspecial, short ataque) {
         this.nombre = nombre;
         this.ataques = new ArrayList<Ataque>();
         this.tipo = tipo;
@@ -26,6 +27,7 @@ public class Pokemon {
         this.defensa = defensa;
         this.velocidad = velocidad;
         this.defensaEspecial = defensaEspecial;
+        this.ataque = ataque;
     }
     
     public String getNombre() {
