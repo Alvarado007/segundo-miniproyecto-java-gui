@@ -246,12 +246,17 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        int daño = 0;
             if (e.getSource()==jButton1  || e.getSource()==jButton2 || e.getSource()==jButton3 || e.getSource()==jButton4){
-                int ataque = Integer.parseInt(e.getActionCommand());
-                Ataque ataque1 = pokemon1.getAtaques().get(ataque);
-                int daño = (ataque1.getPotencia()* ataque1.getPotencia())/ pokemon2.getDefensa();
+                int ataque1 = Integer.parseInt(e.getActionCommand());
+                Ataque ataquePokemon1 = pokemon1.getAtaques().get(ataque1);
+                daño = (ataquePokemon1.getPotencia()* ataquePokemon1.getPotencia())/ pokemon2.getDefensa();
+                System.out.println(daño);
+                if (pokemon1.getTipo() == pokemon2.getCounter()){
+                    daño = daño + (int) (daño * 0.3);
+                }
                 pokemon2.setVida((short) (pokemon2.getVida() - daño));
-                mensajes(entrenador1.getNombre_entrenador() + " ataca a " + pokemon2.getNombre() + " con " + ataque1.getNombreAtaque() + " y le hace " + daño + " de daño!");
+                mensajes(entrenador1.getNombre_entrenador() + " ataca a " + pokemon2.getNombre() + " con " + ataquePokemon1.getNombreAtaque() + " y le hace " + daño + " de daño!");
                 jLabel7.setText(Short.toString(pokemon2.getVida()));
                 turno = (byte)(2);
                 DecisionBatalla();
@@ -261,7 +266,11 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
             else if (e.getSource()==jButton5  || e.getSource()==jButton6 || e.getSource()==jButton7 || e.getSource()==jButton8){
                 int ataque = Integer.parseInt(e.getActionCommand());
                 Ataque ataque2 = pokemon2.getAtaques().get(ataque);
-                int daño = (ataque2.getPotencia()* ataque2.getPotencia())/ pokemon1.getDefensa();
+                daño = (ataque2.getPotencia()* ataque2.getPotencia())/ pokemon1.getDefensa();
+                System.out.println(daño);
+                if (pokemon2.getTipo() == pokemon1.getCounter()){
+                    daño = daño + (int) (daño * 0.3);
+                }
                 pokemon1.setVida((short) (pokemon1.getVida() - daño));
                 mensajes(entrenador2.getNombre_entrenador() + " ataca a " + pokemon1.getNombre() + " con " + ataque2.getNombreAtaque() + " y le hace " + daño + " de daño!");
                 jLabel5.setText(Short.toString(pokemon1.getVida()));
@@ -269,6 +278,7 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
                 DecisionBatalla();
                 
             }
+        
         
     }
     public void DecisionBatalla(){
