@@ -50,7 +50,7 @@ public class Ataque {
     }
 
     static public short randomPotencia() {
-        return (short) (Math.random() * 80 + 20);
+        return (short) (Math.random() * 40 + 20);
     }
 
     static public ArrayList<Ataque> getAtaques() {

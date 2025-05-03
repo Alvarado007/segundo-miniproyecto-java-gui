@@ -109,33 +109,21 @@ public class Entrenador extends SerVivo {
 
     public void elegirPokemonBatallaAutomatico() {
         ArrayList<Pokemon> pokemones = new ArrayList<>();
-        pokemones.add(new Pokemon("Pikachu", TiposPokemon.ELECTRICO, randomVida(), TiposPokemon.PSIQUICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Charmander", TiposPokemon.FUEGO, randomVida(), TiposPokemon.AGUA, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Squirtle", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Psyduck", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Bulbasaur", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Jigglypuff", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Meowth", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Snorlax", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Eevee", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Mewtwo", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Gengar", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Charizard", TiposPokemon.FUEGO, randomVida(), TiposPokemon.AGUA, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Blastoise", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Alakazam", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Raichu", TiposPokemon.ELECTRICO, randomVida(), TiposPokemon.PSIQUICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Arcanine", TiposPokemon.FUEGO, randomVida(), TiposPokemon.AGUA, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Abra", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Celebi", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Delphox", TiposPokemon.FUEGO, randomVida(), TiposPokemon.AGUA, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Lugia", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Rayquaza", TiposPokemon.ELECTRICO, randomVida(), TiposPokemon.PSIQUICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Gardevoir", TiposPokemon.PSIQUICO, randomVida(), TiposPokemon.FUEGO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Gyarados", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Lucario", TiposPokemon.ELECTRICO, randomVida(), TiposPokemon.PSIQUICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Greninja", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Incineroar", TiposPokemon.FUEGO, randomVida(), TiposPokemon.AGUA, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
-        pokemones.add(new Pokemon("Magikarp", TiposPokemon.AGUA, randomVida(), TiposPokemon.ELECTRICO, randomDefensa(), randomVelocidad(), randomDefensaEspecial(), randomAtaque()));
+        HashMap<String, TiposPokemon> tipoPokemon = getTipoPokemon();
+        HashMap<String, TiposPokemon> counters = getCounters();
+        ArrayList<String> nombresPokemones = getPokemones();
+        for (int i = 0; i < 50; i++) {
+            String nombre = nombresPokemones.get((int) (Math.random() * nombresPokemones.size() - 1));
+            TiposPokemon tipo = tipoPokemon.get(nombre);
+            TiposPokemon counter = counters.get(nombre);
+            short vida = randomVida();
+            short defensa = randomDefensa();
+            short velocidad = randomVelocidad();
+            short defensaEspecial = randomDefensaEspecial();
+            short ataque = randomAtaque();
+            Pokemon pokemon = new Pokemon(nombre, tipo, vida, counter, defensa, velocidad, defensaEspecial, ataque);
+            pokemones.add(pokemon);
+        }
         
             
         for (byte i=0; i<3; i++){
@@ -254,6 +242,108 @@ public class Entrenador extends SerVivo {
         imagenes.put("Squirtle", "/Imagenes/Pokemones/Squirtle.png");
 
         return imagenes;
+    }
+
+    public HashMap<String, TiposPokemon> getTipoPokemon() {
+        HashMap<String, TiposPokemon> tipoPokemon = new HashMap<>();
+
+        tipoPokemon.put("Abra", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Alakazam", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Arcanine", TiposPokemon.FUEGO);
+        tipoPokemon.put("Blastoise", TiposPokemon.AGUA);
+        tipoPokemon.put("Bulbasaur", TiposPokemon.AGUA);
+        tipoPokemon.put("Celebi", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Charizard", TiposPokemon.FUEGO);
+        tipoPokemon.put("Charmander", TiposPokemon.FUEGO);
+        tipoPokemon.put("Delphox", TiposPokemon.FUEGO);
+        tipoPokemon.put("Eevee", TiposPokemon.AGUA);
+        tipoPokemon.put("Gardevoir", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Gengar", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Greninja", TiposPokemon.AGUA);
+        tipoPokemon.put("Gyarados", TiposPokemon.AGUA);
+        tipoPokemon.put("Incineroar", TiposPokemon.FUEGO);
+        tipoPokemon.put("Jigglypuff", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Lucario", TiposPokemon.ELECTRICO);
+        tipoPokemon.put("Lugia", TiposPokemon.AGUA);
+        tipoPokemon.put("Magikarp", TiposPokemon.AGUA);
+        tipoPokemon.put("Meowth", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Mewtwo", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Pikachu", TiposPokemon.ELECTRICO);
+        tipoPokemon.put("Psyduck", TiposPokemon.PSIQUICO);
+        tipoPokemon.put("Raichu", TiposPokemon.ELECTRICO);
+        tipoPokemon.put("Rayquaza", TiposPokemon.ELECTRICO);
+        tipoPokemon.put("Snorlax", TiposPokemon.AGUA);
+        tipoPokemon.put("Squirtle", TiposPokemon.AGUA);
+
+
+        return tipoPokemon;
+    }
+
+    public HashMap<String, TiposPokemon> getCounters() {
+        HashMap<String, TiposPokemon> counters = new HashMap<>();
+
+        counters.put("Abra", TiposPokemon.FUEGO);
+        counters.put("Alakazam", TiposPokemon.FUEGO);
+        counters.put("Arcanine", TiposPokemon.AGUA);
+        counters.put("Blastoise", TiposPokemon.ELECTRICO);
+        counters.put("Bulbasaur", TiposPokemon.ELECTRICO);
+        counters.put("Celebi", TiposPokemon.FUEGO);
+        counters.put("Charizard", TiposPokemon.AGUA);
+        counters.put("Charmander", TiposPokemon.AGUA);
+        counters.put("Delphox", TiposPokemon.AGUA);
+        counters.put("Eevee", TiposPokemon.ELECTRICO);
+        counters.put("Gardevoir", TiposPokemon.FUEGO);
+        counters.put("Gengar", TiposPokemon.FUEGO);
+        counters.put("Greninja", TiposPokemon.ELECTRICO);
+        counters.put("Gyarados", TiposPokemon.ELECTRICO);
+        counters.put("Incineroar", TiposPokemon.AGUA);
+        counters.put("Jigglypuff", TiposPokemon.FUEGO);
+        counters.put("Lucario", TiposPokemon.PSIQUICO);
+        counters.put("Lugia", TiposPokemon.ELECTRICO);
+        counters.put("Magikarp", TiposPokemon.ELECTRICO);
+        counters.put("Meowth", TiposPokemon.FUEGO);
+        counters.put("Mewtwo", TiposPokemon.FUEGO);
+        counters.put("Pikachu", TiposPokemon.PSIQUICO);
+        counters.put("Psyduck", TiposPokemon.FUEGO);
+        counters.put("Raichu", TiposPokemon.PSIQUICO);
+        counters.put("Rayquaza", TiposPokemon.PSIQUICO);
+        counters.put("Snorlax", TiposPokemon.ELECTRICO);
+        counters.put("Squirtle", TiposPokemon.ELECTRICO);
+
+        return counters;
+    }
+
+    public ArrayList<String> getPokemones() {
+        ArrayList<String> pokemones = new ArrayList<>();
+        pokemones.add("Abra");
+        pokemones.add("Alakazam");
+        pokemones.add("Arcanine");
+        pokemones.add("Blastoise");
+        pokemones.add("Bulbasaur");
+        pokemones.add("Celebi");
+        pokemones.add("Charizard");
+        pokemones.add("Charmander");
+        pokemones.add("Delphox");
+        pokemones.add("Eevee");
+        pokemones.add("Gardevoir");
+        pokemones.add("Gengar");
+        pokemones.add("Greninja");
+        pokemones.add("Gyarados");
+        pokemones.add("Incineroar");
+        pokemones.add("Jigglypuff");
+        pokemones.add("Lucario");
+        pokemones.add("Lugia");
+        pokemones.add("Magikarp");
+        pokemones.add("Meowth");
+        pokemones.add("Mewtwo");
+        pokemones.add("Pikachu");
+        pokemones.add("Psyduck");
+        pokemones.add("Raichu");
+        pokemones.add("Rayquaza");
+        pokemones.add("Snorlax");
+        pokemones.add("Squirtle");
+
+        return pokemones;
     }
 
     @Override
