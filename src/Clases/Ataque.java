@@ -52,6 +52,9 @@ public class Ataque {
     static public short randomPotencia() {
         return (short) (Math.random() * 40 + 20);
     }
+    static public short randomPotenciaEspecial(){
+        return (short) (Math.random() * 80 + 60);
+    }
 
     static public ArrayList<Ataque> getAtaques() {
         ArrayList<Ataque> ataques = new ArrayList<Ataque>();
@@ -127,6 +130,35 @@ public class Ataque {
         ataques.add(ataque34);
         
         return ataques;
+    }
+    static public ArrayList<Ataque> getAtaquesEspeciales() {
+        ArrayList<Ataque> ataquesEspeciales = new ArrayList<Ataque>();
+
+        ataquesEspeciales.add(new Ataque("Relámpago Supremo", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.ELECTRICO));
+        ataquesEspeciales.add(new Ataque("Centella", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.ELECTRICO));
+        ataquesEspeciales.add(new Ataque("Tormenta de Rayos", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.ELECTRICO));
+        ataquesEspeciales.add(new Ataque("Explosión Eléctrica", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.ELECTRICO));
+        ataquesEspeciales.add(new Ataque("Impulso Voltio", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.ELECTRICO));
+
+        ataquesEspeciales.add(new Ataque("Llama Fantasma", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.FUEGO));
+        ataquesEspeciales.add(new Ataque("Fuego Celestial", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.FUEGO));
+        ataquesEspeciales.add(new Ataque("Erupción Solar", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.FUEGO));
+        ataquesEspeciales.add(new Ataque("Llama Espiral", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.FUEGO));
+        ataquesEspeciales.add(new Ataque("Explosión Ígnea", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.FUEGO));
+
+        ataquesEspeciales.add(new Ataque("Tifón Acuático", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.AGUA));
+        ataquesEspeciales.add(new Ataque("Ola Gigante", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.AGUA));
+        ataquesEspeciales.add(new Ataque("Tifón Marino", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.AGUA));
+        ataquesEspeciales.add(new Ataque("Pulso Oceánico", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.AGUA));
+        ataquesEspeciales.add(new Ataque("Chorro Místico", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.AGUA));
+
+        ataquesEspeciales.add(new Ataque("Impacto Mental", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.PSIQUICO));
+        ataquesEspeciales.add(new Ataque("Tormenta Psíquica", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.PSIQUICO));
+        ataquesEspeciales.add(new Ataque("Explosión Mental", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.PSIQUICO));
+        ataquesEspeciales.add(new Ataque("Eco Cerebral", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.PSIQUICO));
+        ataquesEspeciales.add(new Ataque("Ondas Mentales", TipoDano.Especial, randomPotenciaEspecial(), TiposPokemon.PSIQUICO));
+
+        return ataquesEspeciales;
     }
 
 }

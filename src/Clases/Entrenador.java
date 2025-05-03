@@ -127,7 +127,7 @@ public class Entrenador extends SerVivo {
         
             
         for (byte i=0; i<3; i++){
-            int randomIndex = (int) (Math.random() * pokemones.size());
+            int randomIndex = (int) (Math.random() * pokemones.size()-1);
             Pokemon pokemon = pokemones.get(randomIndex);
             agregarPokemonEquipo(pokemon);
             pokemones.remove(randomIndex);
@@ -136,9 +136,26 @@ public class Entrenador extends SerVivo {
     public void agregraAtaquesPokemonesAutomatico() {
         ArrayList<Ataque>ataques=Ataque.getAtaques();
         for (Pokemon pokemon : equipo_entrenador) {
-            for (byte i=0; i<4; i++){
+            for (byte i=0; i<3; i++){
                 while (true){
-                    int randomIndex = (int) (Math.random() * ataques.size());
+                    int randomIndex = (int) (Math.random() * ataques.size()-1);
+                    Ataque ataque = ataques.get(randomIndex);
+                    if (ataque.getTipoAtaque().equals(pokemon.getTipo())){
+                        pokemon.addAtaque(ataque);
+                        ataques.remove(randomIndex);
+                        break;
+                    } 
+                }
+            }
+        }
+        agregraAtaquesPokemonesAutomaticoEspeciales();
+    }
+    public void agregraAtaquesPokemonesAutomaticoEspeciales() {
+        ArrayList<Ataque>ataques=Ataque.getAtaquesEspeciales();
+        for (Pokemon pokemon : equipo_entrenador) {
+            for (byte i=0; i<1; i++){
+                while (true){
+                    int randomIndex = (int) (Math.random() * ataques.size()-1);
                     Ataque ataque = ataques.get(randomIndex);
                     if (ataque.getTipoAtaque().equals(pokemon.getTipo())){
                         pokemon.addAtaque(ataque);
@@ -149,6 +166,7 @@ public class Entrenador extends SerVivo {
             }
         }
     }
+
     // public void agregarAtaquePokemonManual(Scanner sc) {
     //     for (Pokemon pokemon : equipo_entrenador) {
     //         for (byte i=0; i<4; i++){
