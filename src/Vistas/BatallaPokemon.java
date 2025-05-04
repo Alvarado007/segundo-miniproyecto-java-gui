@@ -271,7 +271,7 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
                 else{
                     int ataque1 = Integer.parseInt(e.getActionCommand());
                     Ataque ataquePokemon1 = pokemon1.getAtaques().get(ataque1);
-                    daño = (ataquePokemon1.getPotencia()* ataquePokemon1.getPotencia())/ pokemon2.getDefensa();
+                    daño = (2/5*30+2)*(pokemon1.getAtaque()/pokemon2.getDefensa())*(ataquePokemon1.getPotencia()/50) + 2;
                     System.out.println(daño);
                     if (pokemon1.getTipo() == pokemon2.getCounter()){
                         daño = daño + (int) (daño * 0.3);
@@ -293,7 +293,7 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
                 else{
                     int ataque = Integer.parseInt(e.getActionCommand());
                     Ataque ataque2 = pokemon2.getAtaques().get(ataque);
-                    daño = (ataque2.getPotencia()* ataque2.getPotencia())/ pokemon1.getDefensa();
+                    daño = (2/5*30+2)*(pokemon2.getAtaque()/pokemon1.getDefensa())*(ataque2.getPotencia()/50) + 2;
                     System.out.println(daño);
                     if (pokemon2.getTipo() == pokemon1.getCounter()){
                         daño = daño + (int) (daño * 0.3);
@@ -335,7 +335,7 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
         int daño = 0;
         if (e.getSource()==jButton4){
             Ataque ataquePokemon1 = pokemon1.getAtaques().get(3);
-            daño = (ataquePokemon1.getPotencia()* ataquePokemon1.getPotencia())/ pokemon2.getDefensaEspecial();
+            daño = (2/5*50+2)*(pokemon1.getAtaque()/pokemon2.getDefensaEspecial())*(ataquePokemon1.getPotencia()/50) + 2;
             System.out.println(daño);
             if (pokemon1.getTipo() == pokemon2.getCounter()){
                     daño = daño + (int) (daño * 0.3);
@@ -348,7 +348,7 @@ public class BatallaPokemon extends javax.swing.JFrame implements ActionListener
             DecisionBatalla();
         }else if (e.getSource()==jButton8){
             Ataque ataque2 = pokemon2.getAtaques().get(3);
-            daño = (ataque2.getPotencia()* ataque2.getPotencia())/ pokemon1.getDefensaEspecial();
+            daño =(2/5*50+2)*(pokemon2.getAtaque()/pokemon1.getDefensaEspecial())*(ataque2.getPotencia()/50) + 2;
             System.out.println(daño);
             if (pokemon2.getTipo() == pokemon1.getCounter()){
                 daño = daño + (int) (daño * 0.3);

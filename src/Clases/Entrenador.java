@@ -91,7 +91,7 @@ public class Entrenador extends SerVivo {
     }
 
     public short randomDefensa() {
-        short defensa = (short) (Math.random() * 80 + 20);
+        short defensa = (short) (Math.random() * 20 + 10);
         return defensa;
     }
     public short randomVelocidad() {
@@ -99,11 +99,11 @@ public class Entrenador extends SerVivo {
         return velocidad;
     }
     public short randomDefensaEspecial() {
-        short defensaEspecial = (short) (Math.random() * 50 + 50);
+        short defensaEspecial = (short) (Math.random() * 20 + 20);
         return defensaEspecial;
     }
     public short randomAtaque() {
-        short ataque = (short) (Math.random() * 50 + 20);
+        short ataque = (short) (Math.random() * 90 + 90);
         return ataque;
     }
 

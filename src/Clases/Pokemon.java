@@ -30,6 +30,14 @@ public class Pokemon {
         this.ataque = ataque;
     }
     
+    public short getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(short ataque) {
+        this.ataque = ataque;
+    }
+
     public String getNombre() {
         return nombre;
     }

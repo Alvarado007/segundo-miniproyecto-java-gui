@@ -230,9 +230,11 @@ public class SeleccionPokemon extends javax.swing.JFrame implements ActionListen
     public void Ganador(){
         if (entrenador1.getEquipo_entrenador().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ganador: " + entrenador2.getNombre_entrenador());
+            this.dispose();
             System.exit(0);
         } else if (entrenador2.getEquipo_entrenador().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ganador: " + entrenador1.getNombre_entrenador());
+            this.dispose();
             System.exit(0);
         } else {
             System.out.println("No hay ganador aún.");
