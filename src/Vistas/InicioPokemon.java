@@ -110,8 +110,8 @@ public class InicioPokemon extends javax.swing.JFrame implements ActionListener{
     // End of variables declaration                   
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.setVisible(false);
         this.dispose();
+        this.setVisible(false);
         Entrenadores entrenadores = new Entrenadores();
     }
 }
