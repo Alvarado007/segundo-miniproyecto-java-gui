@@ -110,9 +110,9 @@ git clone https://github.com/Alvarado007/Primer-miniproyecto-java.git
 4. Ejecuta la clase `Main` (por implementar) o una clase de prueba que cree entrenadores y pokémon para simular batallas.
 
 ### 👥 Autores
-- Samuel Alvarado – [GitHub](https://github.com/Alvarado007)
-- Santiago Arboleda – [GitHub](https://github.com/SantiagoA0408)
-- Juan Manuel Gómez – [GitHub](https://github.com/JuanManuelG26706)
+- Samuel Alvarado – [GitHub](https://github.com/Alvarado007) 202459469
+- Santiago Arboleda – [GitHub](https://github.com/SantiagoA0408) 202459463
+- Juan Manuel Gómez – [GitHub](https://github.com/JuanManuelG26706) 202459450
 
 ### 📬 Contacto
 Si quieres mejorar este proyecto o darme sugerencias, no dudes en escribirme.
